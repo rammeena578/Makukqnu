@@ -1,227 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telegram Learning Community</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRADE WITH MUNNAF | Stock Market</title>
 
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: #e9fcff;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-}
+    body {
+      font-family: Arial, sans-serif;
+      background: #06111f;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.container {
-  max-width: 850px;
-  margin: auto;
-  background: #04152d;
-  border: 4px solid #00c8dc;
-  border-radius: 48px;
-  padding: 65px 45px 40px;
-  text-align: center;
-  color: #dce6f1;
-}
+    .card {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      background: #101f31;
+      border: 1px solid #263d55;
+      border-radius: 22px;
+      padding: 30px 22px;
+      box-shadow: 0 15px 45px #0007;
+    }
 
-.profile {
-  width: 300px;
-  height: 300px;
-  max-width: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  border: 7px solid #00c8dc;
-  margin-bottom: 45px;
-}
+    .logo {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
 
-h1 {
-  color: white;
-  font-size: clamp(28px, 5vw, 48px);
-  margin-bottom: 55px;
-}
+    .tag {
+      display: inline-block;
+      background: #123c30;
+      color: #56e9a8;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
 
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 24px 0;
-  border-bottom: 1px solid #17405e;
-  text-align: left;
-  font-size: clamp(18px, 3.5vw, 30px);
-}
+    h1 {
+      font-size: 29px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
 
-.feature:last-child {
-  border-bottom: none;
-}
+    .description {
+      color: #b6c5d8;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
 
-.icon {
-  min-width: 75px;
-  text-align: center;
-  font-size: 35px;
-}
+    .features {
+      background: #091727;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: left;
+      margin-bottom: 25px;
+      line-height: 2.2;
+      font-size: 14px;
+      color: #dce8f5;
+    }
 
-.description {
-  font-size: clamp(18px, 3vw, 27px);
-  line-height: 1.5;
-  margin: 40px 0;
-}
+    .join-btn {
+      display: block;
+      background: #229ed9;
+      color: white;
+      text-decoration: none;
+      padding: 17px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
 
-.telegram-btn {
-  display: block;
-  width: 100%;
-  padding: 25px 12px;
-  border-radius: 100px;
-  background: linear-gradient(
-    100deg,
-    #00c9db,
-    #1385f8,
-    #9149f5
-  );
-  color: white;
-  text-decoration: none;
-  font-size: clamp(23px, 4vw, 38px);
-  font-weight: bold;
-  transition: transform .2s;
-}
+    .join-btn:hover {
+      background: #1688bd;
+      transform: translateY(-2px);
+    }
 
-.telegram-btn:hover {
-  transform: scale(1.02);
-}
+    .timer {
+      margin-top: 23px;
+      color: #b9c9dc;
+      font-size: 14px;
+    }
 
-.hindi {
-  color: #9aafc4;
-  font-size: clamp(17px, 3vw, 25px);
-  line-height: 1.6;
-  margin-top: 35px;
-}
+    #countdown {
+      font-size: 25px;
+      font-weight: bold;
+      color: #42e6a0;
+      margin: 12px 0;
+    }
 
-.timer {
-  color: #00d5e8;
-  font-size: 18px;
-  margin-top: 25px;
-}
+    .cancel-btn {
+      background: transparent;
+      color: #b9c9dc;
+      border: 1px solid #52657b;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 12px;
+    }
 
-@media(max-width:600px) {
-  body {
-    padding: 10px;
-  }
+    .disclaimer {
+      font-size: 11px;
+      color: #8599af;
+      line-height: 1.6;
+      margin-top: 24px;
+    }
 
-  .container {
-    padding: 40px 20px 30px;
-    border-radius: 35px;
-  }
-
-  .profile {
-    width: 230px;
-    height: 230px;
-  }
-
-  .feature {
-    gap: 10px;
-  }
-
-  .icon {
-    min-width: 50px;
-  }
-}
-</style>
+    footer {
+      color: #71849b;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="card">
 
-  <!-- YOUR PROFILE PHOTO -->
-  <img
-    src="1000282969.jpg"
-    alt="Profile Photo"
-    class="profile"
-  >
+    <div class="logo">📈</div>
 
-  <h1>PANKAJ BHARDWAJ</h1>
+    <div class="tag">STOCK MARKET COMMUNITY</div>
 
-  <div class="features">
+    <h1>TRADE WITH MUNNAF</h1>
 
-    <div class="feature">
-      <div class="icon">🔵</div>
-      <div>Learning &amp; Educational Sessions</div>
+    <p class="description">
+      Welcome to Trade With Munnaf!
+      Join our Telegram community for stock market
+      discussions, market updates, and trading education.
+    </p>
+
+    <div class="features">
+      <p>📊 Stock Market Discussions</p>
+      <p>📈 Market Updates</p>
+      <p>📚 Trading Education</p>
+      <p>💬 Trading Community</p>
     </div>
 
-    <div class="feature">
-      <div class="icon">📈</div>
-      <div>Market Concepts &amp; Awareness</div>
+    <a
+      class="join-btn"
+      href="https://t.me/+VzW7Xq8nmJwxMjg1"
+      id="joinBtn"
+    >
+      ✈ JOIN TELEGRAM CHANNEL
+    </a>
+
+    <div class="timer">
+      <p>Automatic Telegram redirect in</p>
+
+      <div id="countdown">20 seconds</div>
+
+      <p id="status">
+        You can join now or cancel the redirect.
+      </p>
+
+      <button
+        class="cancel-btn"
+        id="cancelBtn"
+        onclick="cancelRedirect()"
+      >
+        Cancel automatic redirect
+      </button>
     </div>
 
-    <div class="feature">
-      <div class="icon">🔹</div>
-      <div>Chart Reading Concepts</div>
-    </div>
+    <p class="disclaimer">
+      Disclaimer: Content is for educational and
+      informational purposes only. Stock market
+      investments involve risk. Do your own research
+      before making investment decisions.
+    </p>
 
-    <div class="feature">
-      <div class="icon">🟦</div>
-      <div>Educational Case Discussions</div>
-    </div>
+    <footer>
+      © 2026 TRADE WITH MUNNAF
+    </footer>
 
-  </div>
+  </main>
 
-  <p class="description">
-    Join our learning community and grow your knowledge
-  </p>
+  <script>
+    let seconds = 20;
+    let redirectTimer;
 
-  <!-- TELEGRAM JOIN BUTTON -->
-  <a
-    href="https://t.me/+TFOCW6VEBCk1OGJl"
-    class="telegram-btn"
-    id="joinBtn"
-  >
-    ✈ JOIN TELEGRAM
-  </a>
+    const countdown =
+      document.getElementById("countdown");
 
-  <p class="hindi">
-    मित्रों, आइए सीखें और अपने ज्ञान को बढ़ाएं।
-    हमारी Telegram Community से जुड़ें।
-  </p>
+    const status =
+      document.getElementById("status");
 
-  <div class="timer">
-    Telegram पर जाने में
-    <b id="countdown">50</b> सेकंड बाकी
-  </div>
+    const cancelBtn =
+      document.getElementById("cancelBtn");
 
-</div>
+    function startCountdown() {
+      redirectTimer = setInterval(function () {
+        seconds--;
 
-<script>
-const telegramLink =
-  "https://t.me/+TFOCW6VEBCk1OGJl";
+        countdown.textContent =
+          seconds + " seconds";
 
-let seconds = 50;
+        if (seconds <= 0) {
+          clearInterval(redirectTimer);
 
-const countdown =
-  document.getElementById("countdown");
+          countdown.textContent = "Redirecting...";
 
-const timer = setInterval(function() {
-  seconds--;
+          window.location.href =
+            "https://t.me/+VzW7Xq8nmJwxMjg1";
+        }
+      }, 1000);
+    }
 
-  countdown.textContent = seconds;
+    function cancelRedirect() {
+      clearInterval(redirectTimer);
 
-  if (seconds <= 0) {
-    clearInterval(timer);
-    window.location.href = telegramLink;
-  }
-}, 1000);
+      countdown.textContent = "Cancelled";
 
-// Button opens Telegram immediately
-document.getElementById("joinBtn")
-  .addEventListener("click", function() {
-    clearInterval(timer);
-  });
-</script>
+      status.textContent =
+        "Automatic redirect cancelled. Tap the Telegram button to join.";
+
+      cancelBtn.style.display = "none";
+    }
+
+    startCountdown();
+  </script>
 
 </body>
 </html>
-
