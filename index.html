@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telegram Learning Community</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9fcff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  background: #04152d;
+  border: 4px solid #00c8dc;
+  border-radius: 48px;
+  padding: 65px 45px 40px;
+  text-align: center;
+  color: #dce6f1;
+}
+
+.profile {
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 7px solid #00c8dc;
+  margin-bottom: 45px;
+}
+
+h1 {
+  color: white;
+  font-size: clamp(28px, 5vw, 48px);
+  margin-bottom: 55px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid #17405e;
+  text-align: left;
+  font-size: clamp(18px, 3.5vw, 30px);
+}
+
+.feature:last-child {
+  border-bottom: none;
+}
+
+.icon {
+  min-width: 75px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.description {
+  font-size: clamp(18px, 3vw, 27px);
+  line-height: 1.5;
+  margin: 40px 0;
+}
+
+.telegram-btn {
+  display: block;
+  width: 100%;
+  padding: 25px 12px;
+  border-radius: 100px;
+  background: linear-gradient(
+    100deg,
+    #00c9db,
+    #1385f8,
+    #9149f5
+  );
+  color: white;
+  text-decoration: none;
+  font-size: clamp(23px, 4vw, 38px);
+  font-weight: bold;
+  transition: transform .2s;
+}
+
+.telegram-btn:hover {
+  transform: scale(1.02);
+}
+
+.hindi {
+  color: #9aafc4;
+  font-size: clamp(17px, 3vw, 25px);
+  line-height: 1.6;
+  margin-top: 35px;
+}
+
+.timer {
+  color: #00d5e8;
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+@media(max-width:600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    padding: 40px 20px 30px;
+    border-radius: 35px;
+  }
+
+  .profile {
+    width: 230px;
+    height: 230px;
+  }
+
+  .feature {
+    gap: 10px;
+  }
+
+  .icon {
+    min-width: 50px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- YOUR PROFILE PHOTO -->
+  <img
+    src="1000282969.jpg"
+    alt="Profile Photo"
+    class="profile"
+  >
+
+  <h1>PANKAJ BHARDWAJ</h1>
+
+  <div class="features">
+
+    <div class="feature">
+      <div class="icon">🔵</div>
+      <div>Learning &amp; Educational Sessions</div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">📈</div>
+      <div>Market Concepts &amp; Awareness</div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🔹</div>
+      <div>Chart Reading Concepts</div>
+    </div>
+
+    <div class="feature">
+      <div class="icon">🟦</div>
+      <div>Educational Case Discussions</div>
+    </div>
+
+  </div>
+
+  <p class="description">
+    Join our learning community and grow your knowledge
+  </p>
+
+  <!-- TELEGRAM JOIN BUTTON -->
+  <a
+    href="https://t.me/+TFOCW6VEBCk1OGJl"
+    class="telegram-btn"
+    id="joinBtn"
+  >
+    ✈ JOIN TELEGRAM
+  </a>
+
+  <p class="hindi">
+    मित्रों, आइए सीखें और अपने ज्ञान को बढ़ाएं।
+    हमारी Telegram Community से जुड़ें।
+  </p>
+
+  <div class="timer">
+    Telegram पर जाने में
+    <b id="countdown">50</b> सेकंड बाकी
+  </div>
+
+</div>
+
+<script>
+const telegramLink =
+  "https://t.me/+TFOCW6VEBCk1OGJl";
+
+let seconds = 50;
+
+const countdown =
+  document.getElementById("countdown");
+
+const timer = setInterval(function() {
+  seconds--;
+
+  countdown.textContent = seconds;
+
+  if (seconds <= 0) {
+    clearInterval(timer);
+    window.location.href = telegramLink;
+  }
+}, 1000);
+
+// Button opens Telegram immediately
+document.getElementById("joinBtn")
+  .addEventListener("click", function() {
+    clearInterval(timer);
+  });
+</script>
+
+</body>
+</html>
+
