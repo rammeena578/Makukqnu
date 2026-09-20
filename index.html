@@ -1,239 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TRADE WITH MUNNAF | Stock Market</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<title>Trade with munnf</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #06111f;
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .card {
-      width: 100%;
-      max-width: 440px;
-      text-align: center;
-      background: #101f31;
-      border: 1px solid #263d55;
-      border-radius: 22px;
-      padding: 30px 22px;
-      box-shadow: 0 15px 45px #0007;
-    }
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
 
-    .logo {
-      font-size: 60px;
-      margin-bottom: 15px;
-    }
+  background: linear-gradient(
+    -45deg,
+    #07111f,
+    #123c35,
+    #142b52,
+    #35164f
+  );
+  background-size: 400% 400%;
+  animation: bgChange 10s ease infinite;
+}
 
-    .tag {
-      display: inline-block;
-      background: #123c30;
-      color: #56e9a8;
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: 12px;
-      margin-bottom: 18px;
-    }
+@keyframes bgChange {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    h1 {
-      font-size: 29px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-    }
+.card {
+  width: 100%;
+  max-width: 440px;
+  padding: 32px 22px;
+  text-align: center;
+  border-radius: 24px;
+  background: rgba(7, 17, 31, 0.88);
+  border: 1px solid #ffffff30;
+  box-shadow: 0 15px 50px #0007;
+}
 
-    .description {
-      color: #b6c5d8;
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-    }
+.market {
+  font-size: 65px;
+  margin-bottom: 15px;
+}
 
-    .features {
-      background: #091727;
-      border-radius: 14px;
-      padding: 18px;
-      text-align: left;
-      margin-bottom: 25px;
-      line-height: 2.2;
-      font-size: 14px;
-      color: #dce8f5;
-    }
+.label {
+  color: #b6ffd8;
+  background: #174b38;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
 
-    .join-btn {
-      display: block;
-      background: #229ed9;
-      color: white;
-      text-decoration: none;
-      padding: 17px;
-      border-radius: 12px;
-      font-size: 17px;
-      font-weight: bold;
-      transition: 0.2s;
-    }
+h1 {
+  font-size: 29px;
+  margin-bottom: 15px;
+  overflow-wrap: anywhere;
+}
 
-    .join-btn:hover {
-      background: #1688bd;
-      transform: translateY(-2px);
-    }
+.description {
+  color: #d1dbea;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
 
-    .timer {
-      margin-top: 23px;
-      color: #b9c9dc;
-      font-size: 14px;
-    }
+.info {
+  background: #ffffff0d;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: left;
+  line-height: 2.2;
+  margin-bottom: 28px;
+  color: #e3eaf4;
+}
 
-    #countdown {
-      font-size: 25px;
-      font-weight: bold;
-      color: #42e6a0;
-      margin: 12px 0;
-    }
+.join-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 17px 12px;
+  border-radius: 15px;
 
-    .cancel-btn {
-      background: transparent;
-      color: #b9c9dc;
-      border: 1px solid #52657b;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 12px;
-    }
+  background: #ffdf00;
+  color: #101010;
+  font-weight: 900;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 1.5;
 
-    .disclaimer {
-      font-size: 11px;
-      color: #8599af;
-      line-height: 1.6;
-      margin-top: 24px;
-    }
+  box-shadow: 0 5px 0 #b69c00;
+  animation: zoom 1.5s infinite;
+  transition: 0.2s;
+}
 
-    footer {
-      color: #71849b;
-      font-size: 12px;
-      margin-top: 20px;
-    }
-  </style>
+.join-btn:hover {
+  background: #ffe94d;
+  transform: scale(1.04);
+}
+
+.telegram-logo {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+@keyframes zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.045); }
+}
+
+.timer {
+  margin-top: 28px;
+  color: #d8e5f5;
+  font-size: 15px;
+}
+
+#countdown {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffdf00;
+  margin: 12px 0;
+}
+
+.cancel-btn {
+  margin-top: 12px;
+  padding: 10px 15px;
+  color: white;
+  background: transparent;
+  border: 1px solid #ffffff60;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.disclaimer {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #9cacc0;
+  margin-top: 28px;
+}
+
+.footer {
+  color: #8b9bb0;
+  margin-top: 20px;
+  font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
-  <main class="card">
+<div class="card">
 
-    <div class="logo">📈</div>
+  <div class="market">📈</div>
 
-    <div class="tag">STOCK MARKET COMMUNITY</div>
+  <div class="label">
+    STOCK MARKET COMMUNITY
+  </div>
 
-    <h1>TRADE WITH MUNNAF</h1>
+  <h1>𝗧𝗿𝗮𝗱𝗲 𝘄𝗶𝘁𝗵 𝗺𝘂𝗻𝗻𝗳</h1>
 
-    <p class="description">
-      Welcome to Trade With Munnaf!
-      Join our Telegram community for stock market
-      discussions, market updates, and trading education.
+  <p class="description">
+    Welcome to our stock market community!
+    Join our Telegram channel for market updates,
+    trading discussions and educational content.
+  </p>
+
+  <div class="info">
+    <p>📊 Stock Market Updates</p>
+    <p>📈 Market Discussions</p>
+    <p>📚 Trading Education</p>
+    <p>💬 Telegram Community</p>
+  </div>
+
+  <a
+    class="join-btn"
+    id="joinBtn"
+    href="https://t.me/+VzW7Xq8nmJwxMjg1"
+  >
+    <svg class="telegram-logo"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true">
+      <path d="M21.9 3.2 18.6 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-5-1.6c-1.1-.4-1.1-1.1.2-1.6L20.7 2c.9-.3 1.6.2 1.2 1.2Z"/>
+    </svg>
+
+    <span>
+      𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗙𝗿𝗲𝗲 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺
+    </span>
+  </a>
+
+  <div class="timer">
+    <p>⌛ Automatic Telegram redirect in</p>
+
+    <div id="countdown">20 Seconds</div>
+
+    <p id="status">
+      Tap the yellow button to join now.
     </p>
 
-    <div class="features">
-      <p>📊 Stock Market Discussions</p>
-      <p>📈 Market Updates</p>
-      <p>📚 Trading Education</p>
-      <p>💬 Trading Community</p>
-    </div>
+    <button
+      class="cancel-btn"
+      id="cancelBtn"
+      onclick="cancelRedirect()">
+      Cancel automatic redirect
+    </button>
+  </div>
 
-    <a
-      class="join-btn"
-      href="https://t.me/+VzW7Xq8nmJwxMjg1"
-      id="joinBtn"
-    >
-      ✈ JOIN TELEGRAM CHANNEL
-    </a>
+  <p class="disclaimer">
+    Disclaimer: For educational and informational purposes only.
+    Stock market investments are subject to market risks.
+    Please do your own research before investing.
+  </p>
 
-    <div class="timer">
-      <p>Automatic Telegram redirect in</p>
+  <div class="footer">
+    © 2026 Trade with munnf
+  </div>
 
-      <div id="countdown">20 seconds</div>
+</div>
 
-      <p id="status">
-        You can join now or cancel the redirect.
-      </p>
+<script>
+  const telegramLink =
+    "https://t.me/+VzW7Xq8nmJwxMjg1";
 
-      <button
-        class="cancel-btn"
-        id="cancelBtn"
-        onclick="cancelRedirect()"
-      >
-        Cancel automatic redirect
-      </button>
-    </div>
+  let seconds = 20;
+  let timer;
 
-    <p class="disclaimer">
-      Disclaimer: Content is for educational and
-      informational purposes only. Stock market
-      investments involve risk. Do your own research
-      before making investment decisions.
-    </p>
+  const countdown =
+    document.getElementById("countdown");
 
-    <footer>
-      © 2026 TRADE WITH MUNNAF
-    </footer>
+  const status =
+    document.getElementById("status");
 
-  </main>
+  const cancelBtn =
+    document.getElementById("cancelBtn");
 
-  <script>
-    let seconds = 20;
-    let redirectTimer;
+  function startTimer() {
+    timer = setInterval(function() {
+      seconds--;
 
-    const countdown =
-      document.getElementById("countdown");
+      countdown.textContent =
+        seconds + " Seconds";
 
-    const status =
-      document.getElementById("status");
+      if (seconds <= 0) {
+        clearInterval(timer);
+        countdown.textContent = "Redirecting...";
+        window.location.href = telegramLink;
+      }
+    }, 1000);
+  }
 
-    const cancelBtn =
-      document.getElementById("cancelBtn");
+  function cancelRedirect() {
+    clearInterval(timer);
 
-    function startCountdown() {
-      redirectTimer = setInterval(function () {
-        seconds--;
+    countdown.textContent = "Cancelled";
+    status.textContent =
+      "Automatic redirect cancelled. You can still join using the yellow button.";
 
-        countdown.textContent =
-          seconds + " seconds";
+    cancelBtn.style.display = "none";
+  }
 
-        if (seconds <= 0) {
-          clearInterval(redirectTimer);
-
-          countdown.textContent = "Redirecting...";
-
-          window.location.href =
-            "https://t.me/+VzW7Xq8nmJwxMjg1";
-        }
-      }, 1000);
-    }
-
-    function cancelRedirect() {
-      clearInterval(redirectTimer);
-
-      countdown.textContent = "Cancelled";
-
-      status.textContent =
-        "Automatic redirect cancelled. Tap the Telegram button to join.";
-
-      cancelBtn.style.display = "none";
-    }
-
-    startCountdown();
-  </script>
+  startTimer();
+</script>
 
 </body>
 </html>
